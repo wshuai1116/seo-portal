@@ -1,0 +1,102 @@
+$color-main: #483aa9;
+$color-fail: #ff5353;
+
+.input.custom {
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px !important;
+  padding: 0 20px !important;
+  // border: 1.4px solid #9fa0a5;
+  height: 56px !important;
+  border: none;
+  background-color: #f1f1f1 !important;
+
+  box-shadow: none !important;
+
+  transition: none !important;
+
+  &.small {
+    height: 40px !important;
+  }
+
+
+  &.smaller {
+    height: 32px !important;
+  }
+
+  &:hover {
+    border: 1px solid #9fa0a5;
+    padding: 0 19px !important;
+  }
+
+  &.read-only {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      border-color: #f1f1f1 !important;
+    }
+  }
+
+  input {
+    font-weight: bold;
+    background-color: #f1f1f1 !important;
+
+    &:focus,
+    &:active {
+      box-shadow: none !important;
+    }
+
+    &.read-only {
+      border: none !important;
+    }
+  }
+
+  &:global(.ant-input-affix-wrapper):not(.ant-input-affix-wrapper-disabled) {
+    &:hover {
+      border: 1px solid #9fa0a5;
+      padding: 0 19px;
+
+      &.light {
+        border: 1px solid #262626;
+      }
+    }
+  }
+
+  :global(.ant-form-item-has-error)
+    &:global(:not(.ant-input-affix-wrapper-disabled):not(.ant-input-affix-wrapper-borderless).ant-input-affix-wrapper) {
+    border: 1px solid $color-fail !important;
+    padding: 0 19px !important;
+
+    &:focus {
+      padding: 0 19px !important;
+    }
+  }
+
+  :global(.ant-form-item-has-error) & {
+    &,
+    &:active,
+    &:focus {
+      border: 1px solid $color-fail !important;
+      padding: 0 19px !important;
+    }
+  }
+
+  &:global(.ant-input):focus {
+    border-right-width: 2px !important;
+  }
+
+  &:global(.ant-input-affix-wrapper-focused),
+  &:global(.ant-input-affix-wrapper-focused):hover,
+  &:focus,
+  &:active {
+    border: 2px solid $color-main !important;
+    border-right-width: 2px !important;
+    padding: 0 18px !important;
+  }
+
+  &:focus,
+  &:active {
+    box-shadow: none !important;
+  }
+}

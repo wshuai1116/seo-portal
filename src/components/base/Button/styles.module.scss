@@ -1,0 +1,149 @@
+$color-main: linear-gradient(0deg, #5A65EA, #5A65EA), #2E6AF6;
+$color-main-active: linear-gradient(0deg, rgba(31, 31, 31, 0.16), rgba(31, 31, 31, 0.16)), #5A65EA;
+$color-main-disable: linear-gradient(0deg, #E4E4E4, #E4E4E4), linear-gradient(0deg, #5A65EA, #5A65EA), #2E6AF6;
+
+@mixin base-button() {
+  &:global(.ant-btn) {
+    font-size: 12px;
+    line-height: 16px;
+    height: 32px;
+    text-shadow: none;
+    border-radius: var(--base-border-radius);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.small-button {
+  height: 32px;
+}
+
+@mixin create-ghost-button($color, $bg-color) {
+  @include base-button;
+
+  box-shadow: none !important;
+  border: 1px solid $bg-color !important;
+  color: $color !important;
+  transition: border 0.1s !important;
+
+  &:hover {
+    border: 1px solid $bg-color !important;
+    color: $color !important;
+  }
+
+  &:global(.disabled) {
+    border: 1px solid $bg-color !important;
+    color: $color !important;
+    background: none !important;
+
+    &:hover {
+      color: $color !important;
+      border: 1px solid $bg-color !important;
+    }
+  }
+}
+
+@mixin create-primary-button($color, $dark-color, $light-color) {
+  background: $color;
+  color: #fff;
+
+  @include base-button;
+
+  border: none !important;
+
+  transition: background 0.1s !important;
+
+  &:global(.ant-btn-primary:focus) {
+    background: $color;
+  }
+
+  &:global(.ant-btn-primary:hover) {
+    background: $dark-color;
+  }
+
+  &:global(.ant-btn-primary:hover),
+  &:global(.ant-btn-primary:focus) {
+    border: none !important;
+  }
+
+  &:global(.ant-btn-primary[disabled]),
+  &:global(.ant-btn-primary[disabled]:hover),
+  &:global(.ant-btn-primary[disabled]:focus),
+  &:global(.ant-btn-primary[disabled]:active) {
+    background: $light-color;
+    color: rgba(31, 31, 31, 0.6);
+    border: none !important;
+  }
+}
+
+.custom-button {
+  &.button-primary-danger {
+    @include create-primary-button(#ff5353, #ca2b1a, rgba(253, 87, 69, 0.6));
+  }
+
+  &.button-primary {
+    @include create-primary-button($color-main,
+      $color-main-active,
+      $color-main-disable,
+    );
+  }
+
+  &.button-primary-ghost {
+    @include create-ghost-button($color-main, $color-main);
+  }
+
+  &.button-ghost-normal {
+    @include create-ghost-button(#1F1F1F, #E1E3E6);
+
+    &:hover {
+      background: linear-gradient(0deg, rgba(31, 31, 31, 0.07), rgba(31, 31, 31, 0.07)), linear-gradient(0deg, #FFFFFF, #FFFFFF), linear-gradient(0deg, #5A65EA, #5A65EA), #2E6AF6 !important;
+      border: 1px solid #E1E3E6 !important;
+    }
+
+    &:global(.disabled) {
+      background: #f5f5f5 !important;
+      color: #999999 !important;
+
+      &:hover {
+        color: #999999 !important;
+      }
+    }
+  }
+
+  &.button-text {
+    @include create-ghost-button(#1F1F1F, #E1E3E6);
+
+    background: transparent !important;
+    border: none !important;
+    color: #5A65EA !important;
+
+    &:hover {
+      background: rgba(90, 101, 234, 0.15) !important;
+      border: none !important;
+      color: #5A65EA !important;
+    }
+  }
+
+  &.button-primary-ghost-danger {
+    @include create-ghost-button(#FFFFFF, #ff5353);
+    background: linear-gradient(0deg, #D3594F, #D3594F), #2E6AF6 !important;
+    border: none !important;
+
+    &:hover {
+      background: linear-gradient(0deg, rgba(31, 31, 31, 0.16), rgba(31, 31, 31, 0.16)), #D3594F !important;
+      border: none !important;
+      color: #5A65EA !important;
+    }
+
+    &:global(.disabled) {
+      background: rgba(211, 89, 79, 0.5) !important;
+      color: rgba(255, 255, 255, 0.6) !important;
+
+      &:hover {
+        color: rgba(255, 255, 255, 0.6) !important;
+      }
+    }
+  }
+}

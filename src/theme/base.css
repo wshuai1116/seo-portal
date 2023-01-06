@@ -1,0 +1,89 @@
+body {
+  --tooltip-bg: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.15),
+      rgba(255, 255, 255, 0.15)
+    ),
+    linear-gradient(0deg, #323232, #323232), rgba(244, 244, 244, 0.7);
+  --tooltip-color: rgba(255, 255, 255, 0.9);
+
+  --main-bg: #fbfbfb;
+  --main-color: #5590ff;
+  --main-text-color: rgba(9, 20, 41, 0.7);
+  --main-icon-bg: rgba(9, 20, 41, 0.07);
+
+  --main-hover-bg: rgba(9, 20, 41, 0.07);
+  --back-button-bg: var(--main-hover-bg);
+  --back-button-hover-bg: rgba(9, 20, 41, 0.11);
+
+  --main-button-color: #5590ff;
+  --button-cancel-bg-bg: rgba(255, 255, 255, 0.5);
+  --button-cancel-hover-bg: rgba(0, 0, 0, 0.09);
+  --button-cancel-border-color: rgba(165, 165, 166, 0.2);
+
+  --base-border-radius: 4px;
+
+  --radio-box-color: rgba(9, 20, 41, 0.5);
+  --radio-box-checked-color: #091429;
+
+  --check-box-color: rgba(29, 30, 32, 0.7);
+  --check-box-check-color: #fff;
+
+  --text-color-most: rgba(9, 20, 41, 1);
+  --text-color-bold: rgba(9, 20, 41, 0.9);
+  --text-color-icon: rgba(9, 20, 41, 0.6);
+  --text-color-sub: rgba(9, 20, 41, 0.5);
+  --text-color-hint: rgba(9, 20, 41, 0.3);
+
+  --dropdown-bg: #fafafa;
+  --dropdown-dark-bg: #fafafa;
+  --dropdown-box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.09);
+  --dropdown-item-active-bg: rgba(51, 51, 52, 0.09);
+  --dropdown-item-active-highlight-bg: #5590ff;
+
+  --select-arrow-color: #c4c4c4;
+
+  --input-border-normal: rgb(210, 210, 211);
+  --input-disabled-color: rgba(9, 20, 41, 0.5);
+  --input-disabled-bg: #f1f1f1;
+  --input-disabled-border: var(--input-border-normal);
+  --input-focus-color: #091429;
+  --input-bg-normal: #fff;
+
+  --modal-big-border-radius: 16px;
+  --modal-bg: #fafafa;
+  --modal-footer-bg: linear-gradient(
+      0deg,
+      rgba(9, 20, 41, 0.04),
+      rgba(9, 20, 41, 0.04)
+    ),
+    #fafafa;
+
+  --modal-border-color: #dcdcdc;
+  --modal-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1),
+    0px 30px 60px rgba(0, 0, 0, 0.09);
+
+  --notice-bg: linear-gradient(0deg, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.03)),
+    #ffffff;
+  --notice-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15),
+    0px 10px 80px rgba(0, 0, 0, 0.2);
+
+  --z-index-notice: 100;
+
+  --key-outer-color: rgb(220, 221, 223);
+  --key-inner-bg: rgba(9, 20, 41, 0.09);
+
+  --top-bar-icon-windows-hover: rgba(0, 0, 0, 0.1);
+  --top-bar-menu-windows-active: rgba(9, 20, 41, 0.09);
+
+  --top-bar-menu-dropdown-bg: #fafafa;
+  --top-bar-menu-dropdown-border: #dcdcdc;
+  --top-bar-menu-dropdown-shadow: 0px 6px 16px rgba(0, 0, 0, 0.2);
+
+  --size-progress-active-bg: #2e8cfc;
+  --size-progress-inactive-bg: rgba(9, 20, 41, 0.15);
+
+  --placeholder-color: rgba(9, 20, 41, 0.6);
+
+  --table-list-item-hover-color: rgba(9, 20, 41, 0.03);
+}

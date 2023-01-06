@@ -1,0 +1,66 @@
+@mixin base() {
+  padding: 0 !important;
+  :global {
+    .ant-notification-notice-message {
+      border-radius: 4px 4px 0 0;
+      padding: 15px 30px 15px 20px !important;
+      font-weight: 800;
+      font-size: 18px;
+      line-height: 28px;
+      margin: 0;
+    }
+
+    .ant-notification-notice-description {
+      color: #666;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 22px;
+      border-radius: 0 0 4px 4px;
+    }
+
+    .ant-notification-notice-close {
+      top: 10px;
+      right: 10px;
+      color: #000;
+    }
+  }
+}
+
+.success {
+  @include base;
+  :global {
+    .ant-notification-notice-message {
+      background-color: #e1f7ea;
+    }
+  }
+}
+
+.error {
+  @include base;
+  :global {
+    .ant-notification-notice-message {
+      background-color: #fdf1ef;
+    }
+  }
+}
+
+.warn {
+  @include base;
+  background: none !important;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.06) !important;
+
+  :global {
+    .ant-notification-notice-message {
+      padding: 14px !important;
+      background: linear-gradient(
+          91.25deg,
+          rgba(255, 179, 32, 0.1) -8.93%,
+          rgba(255, 198, 84, 0) 128.6%
+        ),
+        #fff9e6;
+      border: 1px solid #f5b676;
+      backdrop-filter: blur(8px);
+      border-radius: 10px;
+    }
+  }
+}

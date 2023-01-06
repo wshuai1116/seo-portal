@@ -1,0 +1,121 @@
+$color-main: #483aa9;
+
+@mixin base-button() {
+  &:global(.ant-btn) {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+    min-width: 168px;
+    height: 48px;
+    text-shadow: none;
+    border-radius: 16px;
+    font-size: 16px;
+  }
+}
+
+.small-button {
+  min-width: 120px !important;
+  height: 36px !important;
+}
+
+@mixin create-ghost-button($color, $bg-color) {
+  @include base-button;
+
+  box-shadow: none !important;
+  // box-shadow: 0 0 0 1px $bg-color !important;
+  border: 1px solid $bg-color !important;
+  color: $color !important;
+  // transition: box-shadow 0.1s !important;
+  transition: border 0.1s !important;
+
+  &:hover {
+    // box-shadow: 0 0 0 2px $color !important;
+    border: 2px solid $bg-color !important;
+  }
+
+  &:global(.disabled) {
+    // box-shadow: 0 0 0 1px rgba(38, 38, 38, 0.2) !important;
+    border: 1px solid rgba(38, 38, 38, 0.2) !important;
+    color: rgba(38, 38, 38, 0.2) !important;
+    background: none !important;
+
+    &:hover {
+      color: rgba(38, 38, 38, 0.2) !important;
+      // box-shadow: 0 0 0 1px rgba(38, 38, 38, 0.2) !important;
+      border: 1px solid rgba(38, 38, 38, 0.2) !important;
+    }
+  }
+}
+
+@mixin create-primary-button($color, $dark-color, $light-color) {
+  background-color: $color;
+  color: #fff;
+
+  @include base-button;
+
+  border: none !important;
+
+  transition: background-color 0.1s !important;
+
+  &:global(.ant-btn-primary:focus) {
+    background-color: $color;
+  }
+
+  &:global(.ant-btn-primary:hover) {
+    background-color: $dark-color;
+  }
+
+  &:global(.ant-btn-primary:hover),
+  &:global(.ant-btn-primary:focus) {
+    border: none !important;
+  }
+
+  &:global(.ant-btn-primary[disabled]),
+  &:global(.ant-btn-primary[disabled]:hover),
+  &:global(.ant-btn-primary[disabled]:focus),
+  &:global(.ant-btn-primary[disabled]:active) {
+    background-color: $light-color;
+    color: rgba(255, 255, 255, 0.6);
+    border: none !important;
+  }
+}
+
+.custom-button {
+  &.button-primary-danger {
+    @include create-primary-button(#ff5353, #ca2b1a, rgba(253, 87, 69, 0.6));
+  }
+
+  &.button-primary {
+    @include create-primary-button(
+      $color-main,
+      darken($color-main, 5%),
+      rgba(98, 91, 204)
+    );
+  }
+
+  &.button-primary-ghost {
+    @include create-ghost-button($color-main, $color-main);
+  }
+
+  &.button-ghost-normal {
+    @include create-ghost-button(rgba(38, 38, 38, 0.2), rgba(38, 38, 38, 0.2));
+
+    color: #262626 !important;
+
+    // &,
+    // &:hover {
+    //   border: none !important;
+    // }
+
+    // &,
+    // &:hover {
+    //   // box-shadow: none !important;
+    //   // border: 1.4px solid rgba(38, 38, 38, 0.2) !important;
+    // }
+  }
+
+  &.button-primary-ghost-danger {
+    // .create-ghost-button(#FD5745, lighten(#FD5745, 25%));
+    @include create-ghost-button(#ff5353, #ff5353);
+  }
+}

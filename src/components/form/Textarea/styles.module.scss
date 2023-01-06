@@ -1,0 +1,57 @@
+$color-main: #483aa9;
+$color-fail: #ff5353;
+
+.textarea.custom {
+  background: #f1f1f1 !important;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  resize: none;
+  border: 1px solid #9fa0a5;
+  box-shadow: none !important;
+  border-radius: 6px !important;
+
+  padding: 10px 20px;
+
+  transition: none !important;
+
+  &:hover,
+  &:active {
+    border: 1px solid $color-main;
+  }
+
+  &.light {
+    background-color: #fff !important;
+    border: 1px solid #9fa0a5;
+
+    textarea {
+      background-color: #fff !important;
+    }
+  }
+
+  &:focus {
+    border: 2px solid $color-main;
+    padding: 9px 19px !important;
+    border-right-width: 2px !important;
+  }
+
+  :global(.ant-form-item-has-error
+      :not(.ant-input-disabled):not(.ant-input-borderless).ant-input:focus)
+    & {
+    &,
+    &:hover {
+      border-right-width: 1px !important;
+      border: 2px solid $color-fail;
+      padding: 9px 18px !important;
+    }
+  }
+
+  :global(.ant-form-item-has-error) & {
+    &,
+    &:hover {
+      border-right-width: 1px !important;
+      border: 2px solid $color-fail;
+      padding: 9px 18px !important;
+    }
+  }
+}

@@ -1,0 +1,90 @@
+$color-main: #483aa9;
+$color-fail: #ff5353;
+$color-text: #666;
+
+.arrow-down {
+  display: inline-block;
+  height: 0;
+  width: 0;
+  border: 4px solid #fff;
+  border-top-width: 6px;
+  border-bottom-width: 0;
+  border-top-color: $color-text;
+  vertical-align: middle;
+  margin-left: 10px;
+
+  transition: transform 0.2s linear;
+}
+
+.dropdown {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 10px;
+
+  // border: 1px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 6px 6px 30px rgba(0, 0, 0, 0.11);
+  border-radius: 10px;
+
+  &.highlight {
+    .item {
+      &:hover {
+        background: #e5e1ff;
+      }
+    }
+  }
+
+  .item {
+    color: $color-text;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 8px 10px;
+    cursor: pointer;
+
+    &:hover {
+      background: #f0f0f1;
+    }
+  }
+}
+
+.select {
+  padding: 16px 10px;
+  height: 56px;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: bold;
+  color: $color-text;
+  border: 1px solid #9fa0a5;
+  border-radius: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+
+  &.small {
+    height: 40px;
+  }
+
+  &.disabled {
+    color: #9fa0a5;
+    pointer-events: none;
+  }
+
+  &.active {
+    .arrow-down {
+      transform: rotate(180deg);
+      border-top-color: $color-main;
+    }
+  }
+
+  &:hover {
+    border: 1px solid #262626;
+  }
+
+  &:focus,
+  &.active,
+  &:active {
+    border: 2px solid $color-main;
+    padding: 15px 9px;
+  }
+}

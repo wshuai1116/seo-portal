@@ -1,0 +1,20 @@
+.root {
+  overflow: hidden;
+  position: relative;
+  transition: all 0.2s ease-out;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  cursor: pointer;
+  flex: 0 0 auto;
+
+  :global {
+    .ant-avatar-string {
+      transform: scale(1) translate(-50%, -50%) !important;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+    }
+  }
+}

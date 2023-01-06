@@ -1,0 +1,4 @@
+Sitemap: https://www.seo-go.top/sitemap.xml
+
+User-agent: *
+Disallow: /legal
